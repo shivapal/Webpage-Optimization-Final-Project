@@ -999,7 +999,7 @@ var resizePizzas = function(size) {
 	var oldWidth = e.offsetWidth;
 	var dx = determineDx(e, size, oldWidth); //determine dx once
     var newwidth = (oldWidth+ dx) + 'px'; //determine newWidth once
-    for (var i = 2; i < 100; i++) {
+    for (var i = 0; i < 100; i++) {
 	  
       document.getElementById("pizza" + i).style.width = newwidth;
     }
