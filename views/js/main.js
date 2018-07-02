@@ -443,7 +443,7 @@ function updatePositions() {
     var phase = Math.sin((scrollTop / 1250) + (i % 5));
 	var e=document.getElementById("back"+i);
 	e.style.left=e.basicLeft + 100 * phase + 'px';
-    //items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+    //items[i].style.left = items[i].basicLeft + 100 * phase + 'px';, changed to getElementById for extra speed
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
@@ -466,7 +466,7 @@ document.addEventListener('DOMContentLoaded', function() {
   for (var i = 0; i < 200; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
-	elem.id= "back" + i;
+	elem.id= "back" + i; //give each element and Id
     elem.src = "images/pizza.png";
     elem.style.height = "100px";
     elem.style.width = "73.333px";
