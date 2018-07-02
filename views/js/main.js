@@ -438,7 +438,7 @@ function updatePositions() {
   var scrollTop = document.documentElement.scrollTop || document.body.scrollTop; //moved out of for loop to prevent reflow
   
   //var items = document.querySelectorAll('.mover');
-  for (var i = 0; i < items.length; i++) {
+  for (var i = 0; i < 200; i++) {
     // document.body.scrollTop is no longer supported in Chrome.
     var phase = Math.sin((scrollTop / 1250) + (i % 5));
 	var e=document.getElementById("back"+i);
