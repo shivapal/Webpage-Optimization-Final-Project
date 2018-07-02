@@ -1001,6 +1001,7 @@ var resizePizzas = function(size) {
 	var dx = determineDx(e, size, oldWidth); //determine dx once
     var newwidth = (oldWidth+ dx) + 'px'; //determine newWidth once
     for (var i = 2; i < 100; i++) {
+	  console.log(newWidth);
       document.getElementById("pizza" + i).width = newwidth;
     }
 	changeSliderLabel(size);
