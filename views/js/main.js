@@ -437,11 +437,13 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
   var scrollTop = document.documentElement.scrollTop || document.body.scrollTop; //moved out of for loop to prevent reflow
   
-  var items = document.querySelectorAll('.mover');
+  //var items = document.querySelectorAll('.mover');
   for (var i = 0; i < items.length; i++) {
     // document.body.scrollTop is no longer supported in Chrome.
     var phase = Math.sin((scrollTop / 1250) + (i % 5));
-    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+	var e=document.getElementById("back"+i);
+	e.style.left=e.basicLeft + 100 * phase + 'px';
+    //items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
@@ -464,6 +466,7 @@ document.addEventListener('DOMContentLoaded', function() {
   for (var i = 0; i < 200; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
+	elem.id= "back" + i;
     elem.src = "images/pizza.png";
     elem.style.height = "100px";
     elem.style.width = "73.333px";
