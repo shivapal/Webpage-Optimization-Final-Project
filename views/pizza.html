@@ -995,12 +995,12 @@ var resizePizzas = function(size) {
 
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
-  var e =document.querySelector(".randomPizzaContainer");
+    var e =document.getElementById("pizza0");
 	var oldWidth = e.offsetWidth;
 	var dx = determineDx(e, size, oldWidth); //determine dx once
     var newwidth = (oldWidth+ dx) + 'px'; //determine newWidth once
-    for (var i = 0; i < document.querySelectorAll(".randomPizzaContainer").length; i++) {
-      document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
+    for (var i = 2; i < 100; i++) {
+      document.getElementById("pizza" + i).width = newwidth;
     }
 	changeSliderLabel(size);
   }
